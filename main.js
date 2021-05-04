@@ -17,20 +17,32 @@ const header = createElement("header", {
   ],
 });
 
+const characters = [
+  {
+    imgSrc: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
+    name: "Ricky Sánchez",
+    status: "Alive",
+    species: "Human",
+    location: {
+      name: "Earth",
+      url: "https://rickandmortyapi.com/api/location/20",
+    },
+  },
+  {
+    imgSrc: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+    location: {
+      name: "Earth",
+      url: "https://rickandmortyapi.com/api/location/20",
+    },
+  },
+];
+
 const section = createElement("section", {
   className: "results",
-  children: [
-    createCharacterElements({
-      imgSrc: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
-      name: "Ricky Sánchez",
-      status: "Alive",
-      species: "Human",
-      location: {
-        name: "Earth",
-        url: "https://rickandmortyapi.com/api/location/20",
-      },
-    }),
-  ],
+  children: characters.map(createCharacterElements),
 });
 
 const footer = createElement("footer", {
