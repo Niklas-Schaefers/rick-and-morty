@@ -39,6 +39,11 @@ header {
   place-content: center;
 }
 
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
 section {
   grid-row: 2;
   display: grid;

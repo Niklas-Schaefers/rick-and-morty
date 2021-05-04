@@ -22,7 +22,7 @@ const section = createElement("section", {
   children: [
     createCharacterElements({
       imgSrc: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
-      name: "Rick",
+      name: "Ricky Sánchez",
       status: "Alive",
       species: "Human",
       location: {
