@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --primary-color: #cb997e;
+  --secondary-color: #ddbea9;
+  --text-color: #ffe8d6;
+  --secondary-text-color: #3f4236;
+  --background-color: #6b705c;
+  --border-color: #a5a58d;
+}
+
+body {
+  margin: 0;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  display: grid;
+}
