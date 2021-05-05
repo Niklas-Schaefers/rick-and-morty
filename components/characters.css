@@ -14,9 +14,32 @@
   --border-color: #a5a58d;
 }
 
-body {
+.character-card {
   margin: 0;
-  background: var(--secondary-color);
-  color: var(--text-color);
+  color: var(--secondary-text-color);
+  background-color: var(--border-color);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 2em;
+  padding-right: 2em;
+  border-radius: 2em;
+
+  /* border-color: var(--background-color);
+  border-width: 1em; */
+}
+
+.character-card img {
+  height: 9em;
+  grid-column: 1;
+  border-radius: 2em;
+  grid-row: 1/5;
+}
+
+.character-card h2,
+p {
+  margin: 0.3em;
+}
+
+.results {
   display: grid;
 }
