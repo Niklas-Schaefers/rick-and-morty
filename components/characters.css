@@ -30,7 +30,8 @@
 
 .character-card img {
   height: 9em;
-  grid-column: 1;
+  grid-column: 1/2;
+  align-self: center;
   border-radius: 2em;
   grid-row: 1/5;
 }
