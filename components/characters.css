@@ -29,7 +29,17 @@
 }
 
 .character-card img {
+  height: 9em;
   grid-column: 1;
   border-radius: 2em;
   grid-row: 1/5;
+}
+
+.character-card h2,
+p {
+  margin: 0.3em;
+}
+
+.results {
+  display: grid;
 }

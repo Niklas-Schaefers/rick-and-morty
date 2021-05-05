@@ -19,6 +19,26 @@ const header = createElement("header", {
 
 const characters = [
   {
+    imgSrc: "https://rickandmortyapi.com/api/character/avatar/107.jpeg",
+    name: "Dr. Wong",
+    status: "Alive",
+    species: "Human",
+    location: {
+      name: "Earth",
+      url: "https://rickandmortyapi.com/api/location/20",
+    },
+  },
+  {
+    imgSrc: "https://rickandmortyapi.com/api/character/avatar/182.jpeg",
+    name: "Jim",
+    status: "Alive",
+    species: "Human",
+    location: {
+      name: "Earth",
+      url: "https://rickandmortyapi.com/api/location/20",
+    },
+  },
+  {
     imgSrc: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
     name: "Ricky Sánchez",
     status: "Alive",
@@ -29,7 +49,7 @@ const characters = [
     },
   },
   {
-    imgSrc: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
+    imgSrc: "https://rickandmortyapi.com/api/character/avatar/630.jpeg",
     name: "Morty Smith",
     status: "Alive",
     species: "Human",
