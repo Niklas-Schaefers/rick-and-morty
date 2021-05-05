@@ -22,23 +22,28 @@
   grid-template-columns: auto auto;
   grid-column-gap: 2em;
   padding-right: 2em;
-  border-radius: 2em;
-
-  /* border-color: var(--background-color);
-  border-width: 1em; */
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  font-size: 1em;
 }
 
 .character-card img {
-  height: 9em;
+  height: 10em;
   grid-column: 1/2;
   align-self: center;
-  border-radius: 2em;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
   grid-row: 1/5;
 }
 
 .character-card h2,
 p {
-  margin: 0.3em;
+  margin: 0.1em;
+  text-align: left;
+}
+
+.character-card p {
+  font-size: 0.8em;
 }
 
 .results {

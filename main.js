@@ -2,6 +2,11 @@ import { createCharacterElements } from "./components/characters.js";
 import "./style.css";
 import { createElement } from "./utils/elements.js";
 import { getCharacters, removeChildren } from "./utils/api";
+import { debounce } from "./utils/timer.js";
+
+// getCharacters("").then((characters) => {
+//   const characterElements = characters.map(createCharacterElements);
+//   charactersSection.append(...characterElements);
 
 const header = createElement("header", {
   className: "hero",
@@ -14,15 +19,14 @@ const header = createElement("header", {
       className: "input",
       placeholder: "Search character",
       autofocus: true,
-      oninput: (event) => {
+      oninput: debounce((event) => {
         removeChildren(charactersSection);
         const search = event.target.value;
-
         getCharacters(search).then((characters) => {
           const characterElements = characters.map(createCharacterElements);
           charactersSection.append(...characterElements);
         });
-      },
+      }, 300),
     }),
   ],
 });
