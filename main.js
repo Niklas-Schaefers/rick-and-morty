@@ -1,6 +1,12 @@
 import { createCharacterElements } from "./components/characters.js";
 import "./style.css";
 import { createElement } from "./utils/elements.js";
+import { getCharacters, removeChildren } from "./utils/api";
+import { debounce } from "./utils/timer.js";
+
+// getCharacters("").then((characters) => {
+//   const characterElements = characters.map(createCharacterElements);
+//   charactersSection.append(...characterElements);
 
 const header = createElement("header", {
   className: "hero",
@@ -13,56 +19,20 @@ const header = createElement("header", {
       className: "input",
       placeholder: "Search character",
       autofocus: true,
+      oninput: debounce((event) => {
+        removeChildren(charactersSection);
+        const search = event.target.value;
+        getCharacters(search).then((characters) => {
+          const characterElements = characters.map(createCharacterElements);
+          charactersSection.append(...characterElements);
+        });
+      }, 300),
     }),
   ],
 });
 
-const characters = [
-  {
-    imgSrc: "https://rickandmortyapi.com/api/character/avatar/107.jpeg",
-    name: "Dr. Wong",
-    status: "Alive",
-    species: "Human",
-    location: {
-      name: "Earth",
-      url: "https://rickandmortyapi.com/api/location/20",
-    },
-  },
-  {
-    imgSrc: "https://rickandmortyapi.com/api/character/avatar/182.jpeg",
-    name: "Jim",
-    status: "Alive",
-    species: "Human",
-    location: {
-      name: "Earth",
-      url: "https://rickandmortyapi.com/api/location/20",
-    },
-  },
-  {
-    imgSrc: "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
-    name: "Ricky Sánchez",
-    status: "Alive",
-    species: "Human",
-    location: {
-      name: "Earth",
-      url: "https://rickandmortyapi.com/api/location/20",
-    },
-  },
-  {
-    imgSrc: "https://rickandmortyapi.com/api/character/avatar/630.jpeg",
-    name: "Morty Smith",
-    status: "Alive",
-    species: "Human",
-    location: {
-      name: "Earth",
-      url: "https://rickandmortyapi.com/api/location/20",
-    },
-  },
-];
-
-const section = createElement("section", {
+const charactersSection = createElement("section", {
   className: "results",
-  children: characters.map(createCharacterElements),
 });
 
 const footer = createElement("footer", {
@@ -78,4 +48,4 @@ const footer = createElement("footer", {
   ],
 });
 
-document.querySelector("#app").append(header, section, footer);
+document.querySelector("#app").append(header, charactersSection, footer);
