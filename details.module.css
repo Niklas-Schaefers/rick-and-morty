@@ -1,0 +1,16 @@
+/* div {
+  grid-row: 2;
+  place-content: center;
+  background: var(--secondary-color);
+  color: var(--secondary-text-color);
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 2em;
+  grid-gap: 2em;
+}
+h2 {
+  grid-row: 1;
+  display: grid;
+  place-content: center;
+  padding: 3em;
+} */

@@ -36,6 +36,12 @@
   grid-row: 1/5;
 }
 
+.character-card a {
+  grid-row: 1/5;
+  margin: 0;
+  padding: 0;
+}
+
 .character-card h2,
 p {
   margin: 0.1em;
